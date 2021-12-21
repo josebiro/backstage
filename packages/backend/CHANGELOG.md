@@ -1,5 +1,21 @@
 # example-backend
 
+## 0.2.58
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/backend-common@0.9.15
+  - @backstage/plugin-scaffolder-backend-module-rails@0.2.1
+  - @backstage/catalog-client@0.5.3
+  - @backstage/plugin-rollbar-backend@0.1.17
+  - @backstage/plugin-auth-backend@0.5.2
+  - @backstage/plugin-search-backend@0.3.0
+  - @backstage/plugin-techdocs-backend@0.12.1
+  - @backstage/plugin-jenkins-backend@0.1.10
+  - example-app@0.2.58
+  - @backstage/plugin-app-backend@0.3.20
+
 ## 0.2.57
 
 ### Patch Changes

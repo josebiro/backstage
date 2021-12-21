@@ -1,5 +1,16 @@
 # @backstage/plugin-search
 
+## 0.5.2
+
+### Patch Changes
+
+- 3d98955c8a: Add Optional Props to Override Icon for SidebarSearch and SidebarSearchModal Component
+- 7a4bd2ceac: Prefer using `Link` from `@backstage/core-components` rather than material-UI.
+- Updated dependencies
+  - @backstage/core-plugin-api@0.4.0
+  - @backstage/plugin-catalog-react@0.6.8
+  - @backstage/core-components@0.8.2
+
 ## 0.5.1
 
 ### Patch Changes

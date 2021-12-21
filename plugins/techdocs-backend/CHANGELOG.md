@@ -1,5 +1,14 @@
 # @backstage/plugin-techdocs-backend
 
+## 0.12.1
+
+### Patch Changes
+
+- 8c25c3ea5b: Fixed a bug preventing cache from being enabled in TechDocs "recommended" deployment mode.
+- Updated dependencies
+  - @backstage/backend-common@0.9.15
+  - @backstage/catalog-client@0.5.3
+
 ## 0.12.0
 
 ### Minor Changes
