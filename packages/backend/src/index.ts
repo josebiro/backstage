@@ -35,6 +35,7 @@ import {
   useHotMemoize,
   ServerTokenManager,
 } from '@backstage/backend-common';
+import { TaskScheduler } from '@backstage/backend-tasks';
 import { Config } from '@backstage/config';
 import healthcheck from './plugins/healthcheck';
 import { metricsInit, metricsHandler } from './metrics';
@@ -62,17 +63,27 @@ function makeCreateEnv(config: Config) {
   const reader = UrlReaders.default({ logger: root, config });
   const discovery = SingleHostDiscovery.fromConfig(config);
   const tokenManager = ServerTokenManager.noop();
-
-  root.info(`Created UrlReader ${reader}`);
-
   const databaseManager = DatabaseManager.fromConfig(config);
   const cacheManager = CacheManager.fromConfig(config);
+  const taskScheduler = TaskScheduler.fromConfig(config);
+
+  root.info(`Created UrlReader ${reader}`);
 
   return (plugin: string): PluginEnvironment => {
     const logger = root.child({ type: 'plugin', plugin });
     const database = databaseManager.forPlugin(plugin);
     const cache = cacheManager.forPlugin(plugin);
-    return { logger, cache, database, config, reader, discovery, tokenManager };
+    const scheduler = taskScheduler.forPlugin(plugin);
+    return {
+      logger,
+      cache,
+      database,
+      config,
+      reader,
+      discovery,
+      tokenManager,
+      scheduler,
+    };
   };
 }
 
